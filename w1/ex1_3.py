@@ -14,13 +14,25 @@ def peak_divide_conquer(arr, i, j):
         return peak_divide_conquer(arr, i, mid - 1)
 
 
+# class solution
+def peak(A, start, end):
+    if start == end:
+        return start
+    mid = (start + end) // 2
+
+    if A[mid] < A[mid + 1]:
+        return peak(A, mid + 1, end)
+    else:
+        return peak(A, start, mid)
+
+
 def main():
     example1 = [1, 2, 3, 4, 5, 6, 7, 8]
     example2 = [8, 7, 6, 5, 4, 3, 2, 1]
     example3 = [1, 2, 3, 4, 3, 2, 1, 0]
     ls = [example1, example2, example3]
     for l in ls:
-        print(f"Peak in {l} is at index: {peak_divide_conquer(l, 0, 7)}")
+        print(f"Peak in {l} is at index: {peak(l, 0, 7)}")
 
 
 if __name__ == '__main__':

@@ -8,13 +8,20 @@ def peak_iter(arr):
             return i
 
 
+def peak(A):
+    for i in range(0, len(A) - 1):
+        if A[i] > A[i + 1]:
+            return i
+    return len(A) - 1
+
+
 def main():
     example1 = [1, 2, 3, 4, 5, 6, 7, 8]
     example2 = [8, 7, 6, 5, 4, 3, 2, 1]
     example3 = [1, 2, 3, 4, 3, 2, 1, 0]
     ls = [example1, example2, example3]
     for l in ls:
-        print(f"Peak in {l} is at index: {peak_iter(l)}")
+        print(f"Peak in {l} is at index: {peak(l)}")
 
 
 if __name__ == '__main__':
