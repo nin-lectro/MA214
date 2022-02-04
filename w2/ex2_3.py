@@ -1,3 +1,4 @@
+# my solution O(n)
 def find_max_profit(A):
     if len(A) == 1:
         return (A[0], A[0], 0)
@@ -14,10 +15,31 @@ def find_max_profit(A):
 
     return (current_min, current_max, current_profit)
 
+# class solution O(nlgn)
+def profit(A, start, end):
+    if start == end:
+        return 0
+    mid = (start + end) // 2
+    left = profit(A, start, mid)
+    right = profit(A, mid + 1, end)
+
+    cross = max(A[mid+ 1: end+1]) - min(A[start: mid + 1])
+    return max(left, right, cross)
+
+# class solution O(n)
+def profit_iterate(A):
+    cur_min = A[0]
+    cur_profit = 0
+    for price in A:
+        if price < cur_min:
+            cur_min = price
+        else:
+            cur_profit = max(cur_profit, price - cur_min)
+    return cur_profit
 
 def main():
     example = [3, 7, 2, 1, 3, 8, 5, 2]
-    print(f'Max profit is {find_max_profit(example)[2]}')
+    print(f'Max profit is {profit_iterate(example)}')
 
 
 if __name__ == '__main__':
