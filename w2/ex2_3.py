@@ -38,7 +38,7 @@ def profit_iterate(A):
     return cur_profit
 
 def main():
-    example = [3, 7, 2, 1, 3, 8, 5, 2]
+    example = [10, 11, 7, 10, 6]
     print(f'Max profit is {profit_iterate(example)}')
 
 
