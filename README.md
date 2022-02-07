@@ -1,10 +1,20 @@
-# MA214
+# MA214 Algorithms and Data Structures Class
 
-Algorithms and Data Structures
+## Overview
+
+### Topics
+
+1. Sorting
+   - Insertion Sort
+   - Merge Sort
+   - Heap Sort
+   - Quick Sort
+   - Lower bounds on sorting
+2. Other topics
 
 ## What is included:
 
-- Each week includes the psets, my solution code
+- Each week includes the psets, my solution code in `python`
 - Also includes the solutions
 - And class solutions
 
