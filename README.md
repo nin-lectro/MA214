@@ -10,6 +10,7 @@
    - Heap Sort
    - Quick Sort
    - Lower bounds on sorting
+   - O(n) sorting like counting sort, radix sort, bucket sort
 2. Other topics
 
 ## What is included:
@@ -21,7 +22,7 @@
 * [x] W1
 * [x] W2
 * [x] W3
-* [ ] W4
+* [x] W4
 * [ ] W5
 * [ ] W6
 * [ ] W7
