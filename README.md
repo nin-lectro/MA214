@@ -12,6 +12,8 @@
    - Lower bounds on sorting
    - O(n) sorting like counting sort, radix sort, bucket sort
 2. Other topics
+   - Arrays, Dynamic Arrays
+   - Linked Lists, Stacks, Queues
 
 ## What is included:
 
