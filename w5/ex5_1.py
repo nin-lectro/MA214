@@ -16,6 +16,20 @@ def medianPartition(A, start, end):
     return i+1
 
 
+# class solution
+def stablePartition(A, start, end):
+    # store in two lists
+    # use O(n) extra space
+    L, R = [], []
+    for i in range(start, end):
+        if A[i] <= A[end]:
+            L.append(A[i])
+        else:
+            R.append(A[i])
+    A[start: end+1] = L + [A[end]] + R
+    return start + len(L)
+
+
 def quicksort(A, start, end):
     if start < end:
         pivot = medianPartition(A, start, end)
