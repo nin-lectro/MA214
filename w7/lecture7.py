@@ -5,6 +5,8 @@ from platform import node
 class Node:
     def __init__(self, id):
         self.id = id
+        self.color = 'white'
+        self.pi = None
 
 
 class Graph:
@@ -34,3 +36,24 @@ class Graph:
         u_node = self.get_node(u_id)
         v_node = self.get_node(v_id)
         self.add_edge(u_node, v_node)
+
+
+def BFS(graph: Graph, s: Node):
+    # for node in graph.V:
+    #     node.color = 'white'
+    #     node.pi = None  # represents predecessor
+
+    s.color = 'gray'
+    s.d = 0
+
+    Q = deque()
+    Q.append(s)
+    while Q:
+        u = Q.popleft()
+        for v in graph.Adj[u.id]:
+            if v.color == 'white':
+                v.color = 'gray'
+                v.d = u.d + 1
+                v.pi = u
+                Q.append(v)
+        u.color = 'black'
