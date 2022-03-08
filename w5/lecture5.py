@@ -1,23 +1,33 @@
-def countingSort(A):
-    pass
-    # pseudocode
+def countingSort(A, k):
     # n elements
     # all from range 0 ... k
-    # iterate over elements
-    # increase the count of each value
-    # calculate the cumulative count
-    # go backwards to insert it into the correct place
     # O(n+k)
+    count = [0 for i in range(k+1)]
+    output = [0 for i in range(len(A))]
+    # gets the counts
+    for i in A:
+        count[i] += 1
+
+    # calculate the cumulative count
+    for i in range(1, k+1):
+        count[i] = count[i - 1] + count[i]
+
+    # iterate over elements from the back
+    # see where its cumulative count is
+    # and place it into its correct place
+    for i in reversed(A):
+        output[count[i] - 1] = i
+        count[i] -= 1
+
+    return output
 
 
-def radixSort(A):
-    pass
+def radixSort(A, k, d):
     # assume n numbers which are all
     # d digits long
     # and each digit comes from 0 .... k
-    # then can iterate over each digit from the back
-    # and stable sort based on the current digit
     # O(d*(n+k))
+    pass
 
 
 def bucketSort(A):
@@ -47,8 +57,8 @@ def insertion_sort(A):
 
 
 def main():
-    a = [0.32, 0.84, 0.12, 0.45, 0.93]
-    print(bucketSort(a))
+    a = [4, 2, 3, 6, 8, 10]
+    print(countingSort(a, 10))
 
 
 if __name__ == '__main__':
