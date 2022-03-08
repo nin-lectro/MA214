@@ -55,6 +55,7 @@ class Queue:
             return dequeued_node.item
 
 
+# some functins still need to be implemented
 class HashTable:
     def __init__(self, size):
         self.size = size
