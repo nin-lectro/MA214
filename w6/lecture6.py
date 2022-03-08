@@ -55,6 +55,24 @@ class Queue:
             return dequeued_node.item
 
 
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.keys = [LinkedList() for i in range(size)]
+
+    def add(self, key):
+        i = hash(key) % self.size
+        self.keys[i].add(key)
+
+    def delete(self, key):
+        i = hash(key) % self.size
+        self.keys[i].delete(key)
+
+    def search(self, key):
+        i = hash(key) % self.size
+        return self.keys[i].search(key)
+
+
 def main():
     pass
 
