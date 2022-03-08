@@ -1,12 +1,9 @@
 from collections import deque
-from platform import node
 
 
 class Node:
     def __init__(self, id):
         self.id = id
-        self.color = 'white'
-        self.pi = None
 
 
 class Graph:
@@ -39,12 +36,13 @@ class Graph:
 
 
 def BFS(graph: Graph, s: Node):
-    # for node in graph.V:
-    #     node.color = 'white'
-    #     node.pi = None  # represents predecessor
+    for node in graph.V:
+        node.color = 'white'
+        node.pi = None  # represents predecessor
 
     s.color = 'gray'
     s.d = 0
+    s.pi = None
 
     Q = deque()
     Q.append(s)
